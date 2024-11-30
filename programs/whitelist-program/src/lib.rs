@@ -45,7 +45,7 @@ pub mod whitelist_program {
 #[derive(Accounts)]
 pub struct InitializeWhitelist<'info>{
     // 8 bytes for the length of the array and 32 bytes for each address max 100 addresses. PDA is created with the seed "whitelist"
-    #[account(init,payer = admin, space = 8 + 32 *100,seeds = [b"whitelist"],bump)] //whitelistbncja432hasdh2123bshamnsad
+    #[account(init,payer = admin, space = 8 + 32 *100,seeds = [b"whitelist"],bump)]
     pub whitelist: Account<'info, Whitelist>,
     #[account(mut)]
     pub admin: Signer<'info>,
